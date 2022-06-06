@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeTest;
 
 import org.testng.annotations.Listeners;
@@ -21,6 +22,7 @@ public class LogInOutBase {
     protected String baseUrl = "https://arcadia.study/de/";
 
     @BeforeTest
+
     public void logIn(){
         WebDriverContainer.getDriver().get(baseUrl);
         System.out.println(WebDriverContainer.getDriver().getCurrentUrl());
@@ -36,7 +38,7 @@ public class LogInOutBase {
         assertEquals(dashboardLoggedIn, "Dashboard");
     }
 
-  // @AfterTest
+    @AfterTest(alwaysRun = true)
     public void logOutAndTearDown(){
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),
                 ParentDashboard.class);

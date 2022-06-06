@@ -55,7 +55,8 @@ public class TestMainPageFooter extends TestBase{
     @Test
     public void translateMainPageToEN(){
         MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
-        mainPage.getLanguageSwitcher().click();
+        mainPage.getHeaderLogo().click();
+       // mainPage.getLanguageSwitcher().click();
         mainPage.getLanguageSwitcherToEN().click();
 
         String title = mainPage.getTitleTextMainPage().getText();

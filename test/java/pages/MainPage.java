@@ -38,26 +38,26 @@ public class MainPage {
     @FindBy(xpath = "/html/body/app-root/app-layout/app-footer-front/section/div/div/div[4]/div/a")
     private WebElement subscribeToInstagramButton;
 
-    @FindBy(css = "div:nth-child(2) > ul > li.mr-4 > a")
-    private WebElement impressum;
+    @FindBy(xpath = "/html/body/app-root/app-layout/app-footer-front/footer/div/div/div[2]/ul/li[1]/a")
+    private WebElement impressum;//from datenschutz
 
     @FindBy(css = "div:nth-child(2) > ul > li:nth-child(2) > a")
     private WebElement datenschutz;
 
-    @FindBy(css = "div > h1")
+    @FindBy(css = "body > app-root > app-layout > div > app-imprint > div > h1")
     private WebElement impressumPageTitle;
 
     @FindBy(xpath = "/html/body/app-root/app-layout/div/app-data-protection/div/h1")
     private WebElement datenschutzPageTitle;
 
-    @FindBy(css = "app-localization > button")
+    @FindBy(css = " app-localization > button > span.mat-button-wrapper")
     private WebElement languageSwitcher;
 
-    @FindBy(css = "#mat-menu-panel-0 > div > button:nth-child(1)")
+    @FindBy(css = "#mat-menu-panel-1 > div > button:nth-child(1)")
     private WebElement languageSwitcherToDE;
 
-    @FindBy(css = "#mat-menu-panel-0 > div > button:nth-child(2)")
-    private WebElement languageSwitcherToEN;
+    @FindBy(css = "#mat-menu-panel-1 > div > button:nth-child(2)")
+    private WebElement languageSwitcherToEN;//from impressum
 
     @FindBy(css = "img[alt='Arcadia'].d-none.d-xl-inline.h-100.w-auto")
     private WebElement pictureWithChildren;

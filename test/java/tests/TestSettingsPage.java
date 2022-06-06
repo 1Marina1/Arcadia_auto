@@ -8,6 +8,7 @@ import pages.CartPage;
 import pages.ParentDashboard;
 import pages.SettingsPage;
 
+
 import static org.testng.Assert.assertEquals;
 
 public class TestSettingsPage extends LogInOutBase{
@@ -71,7 +72,7 @@ public class TestSettingsPage extends LogInOutBase{
         parentDashboard.getSettingRightMenu().click();
         settingsPage.getPasswordChangeButton().click();
         String newPassword = "zmxncbv12344321";
-        settingsPage.getParentEmailInput().sendKeys(newPassword);
+        settingsPage.getParentPasswordInput().sendKeys(newPassword);
         settingsPage.getSubmitButton().click();
         String successMessage = settingsPage.getSuccessMessage().getText();
         assertEquals(successMessage, "Die Änderungen wurden gespeichert.");
@@ -88,7 +89,7 @@ public class TestSettingsPage extends LogInOutBase{
         settingsPage.getFirstKidNameChangeButton().click();
 
         String newName = "a";
-        settingsPage.getParentNameInput().sendKeys(newName);
+        settingsPage.getFirstKidNameInput().sendKeys(newName);
         settingsPage.getSubmitButton().click();
         String successMessage = settingsPage.getSuccessMessageKidTab().getText();
         assertEquals(successMessage, "Die Änderungen wurden gespeichert.");

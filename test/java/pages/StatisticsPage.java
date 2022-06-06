@@ -34,10 +34,10 @@ public class StatisticsPage {
     @FindBy(css = "#mat-button-toggle-4")
     private WebElement allTabButton;
 
-    @FindBy(css = "#mat-menu-panel-1 > div > button:nth-child(1)")
+    @FindBy(xpath = "//*[@id='mat-menu-panel-2']/div/button[1]")
     private WebElement firstClassKristinaFromDropDown;
 
-    @FindBy(css = "#mat-menu-panel-2 > div > button:nth-child(1)")
+    @FindBy(xpath = "//*[@id='mat-menu-panel-3']/div/button[1]")
     private WebElement firstClassValentinFromDropDown;
 
     @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-statistics/div[2]/div[1]/ul/li[1]")

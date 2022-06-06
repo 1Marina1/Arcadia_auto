@@ -20,25 +20,25 @@ public class SettingsPage {
     @FindBy(xpath = "//div[2]/app-parent-settings-general/div/form/div[1]/div[3]/a")
     private WebElement nameChangeButton;
 
-    @FindBy(id = "mat-input-0")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[1]/mat-form-field/div/div[1]/div/input")
     private WebElement parentNameInput;
 
-    @FindBy(xpath = "//app-parent-settings-general/div/form/div[1]/div[2]")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[1]/div[2]")
     private WebElement parentName;
 
     @FindBy(xpath = "//div[2]/app-parent-settings-general/div/form/div[2]/div[3]/a")
     private WebElement surnameChangeButton;
 
-    @FindBy(id = "mat-input-0")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[2]/mat-form-field/div/div[1]/div/input")
     private WebElement parentSurnameInput;
 
-    @FindBy(xpath = "//app-parent-settings-general/div/form/div[2]/div[2]")
+    @FindBy(css = "body > app-root > app-layout-parent > div > div:nth-child(2) > main > app-parent-settings > div.card.p-0.mt-5 > app-parent-settings-general > div > form > div:nth-child(3) > div.col-6.name.d-md-block.d-none.ng-star-inserted")
     private WebElement parentSurname;
 
     @FindBy(xpath = "//div[2]/app-parent-settings-general/div/form/div[3]/div[3]/a")
     private WebElement emailChangeButton;
 
-    @FindBy(id = "mat-input-0")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[3]/mat-form-field/div/div[1]/div/input")
     private WebElement parentEmailInput;
 
     @FindBy(xpath = "//app-parent-settings-general/div/form/div[3]/div[2]")
@@ -50,10 +50,10 @@ public class SettingsPage {
     @FindBy(xpath = "//div[2]/app-parent-settings-general/div/form/div[4]/div[3]/a")
     private WebElement passwordChangeButton;
 
-    @FindBy(id = "mat-input-0")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[4]/mat-form-field/div/div[1]/div/input")
     private WebElement parentPasswordInput;
 
-    @FindBy(xpath = "//div[2]/app-parent-settings-general/div/form/div[4]/div[2]")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[4]/div[2]")
     private WebElement parentPassword;
 
     @FindBy(css = "form > button")
@@ -64,6 +64,9 @@ public class SettingsPage {
 
     @FindBy(xpath = "//*[@id='0name']/div[2]")
     private WebElement firstKidName;
+
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-kids/div/form/div[1]/div[1]/div[2]/div/div/div[1]/mat-form-field/div/div[1]/div/input")
+    private WebElement firstKidNameInput;
 
     @FindBy(xpath = "//*[@id='0surname']/div[3]/a")
     private WebElement firstKidSurnameChangeButton;
@@ -86,7 +89,7 @@ public class SettingsPage {
     @FindBy(xpath = "//*[@id='alert']/ngb-alert/strong")
     private WebElement successMessageKidTab;
 
-    @FindBy(css = "#mat-input-1")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-kids/div/form/div[1]/div[1]/div[2]/div/div/div[2]/mat-form-field/div/div[1]/div/input")
     private WebElement firstKidSurnameInput;
 
     @FindBy(xpath = "//*[@id='0class']/mat-form-field/div/div[1]/div")
@@ -98,7 +101,7 @@ public class SettingsPage {
     @FindBy(xpath = "//*[@id='0class']/div[2]")
     private WebElement firstKidClass;
 
-    @FindBy(xpath = "//*[@id='mat-radio-2']/label/span[2]")
+    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div/mat-radio-group/mat-radio-button[1]/label/span[1]")
     private WebElement oneMonthRadioButton;
 
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div[2]/a")
@@ -143,6 +146,9 @@ public class SettingsPage {
     }
     public WebElement getFirstKidNameChangeButton() {
         return firstKidNameChangeButton;
+    }
+    public WebElement getFirstKidNameInput(){
+        return firstKidNameInput;
     }
     public WebElement getFirstKidSurnameChangeButton() {
         return firstKidSurnameChangeButton;

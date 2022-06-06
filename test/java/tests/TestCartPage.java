@@ -23,7 +23,7 @@ public class TestCartPage extends LogInOutBase{
         settingsPage.getOneMonthRadioButton().click();
         settingsPage.getAddToCartButtonOnPopUp().click();
         String addedToCartMessage = settingsPage.getAddedToCartMessage().getText();
-        assertEquals(addedToCartMessage, "in den Warenkorb gelegt.");
+        assertEquals(addedToCartMessage, "in den Warenkorb hinzugefügt.");
         settingsPage.getToCartButton().click();
         Assert.assertTrue(cartPage.getSubscriptionDiv().isDisplayed());
         cartPage.getDeleteSubscriptionButton().click();
@@ -42,7 +42,7 @@ public class TestCartPage extends LogInOutBase{
         settingsPage.getOneMonthRadioButton().click();
         settingsPage.getAddToCartButtonOnPopUp().click();
         String addedToCartMessage = settingsPage.getAddedToCartMessage().getText();
-        assertEquals(addedToCartMessage, "in den Warenkorb gelegt.");
+        assertEquals(addedToCartMessage, "in den Warenkorb hinzugefügt.");
         settingsPage.getToCartButton().click();
         Assert.assertTrue(cartPage.getSubscriptionDiv().isDisplayed());
         cartPage.getGoToPaymentButton().click();

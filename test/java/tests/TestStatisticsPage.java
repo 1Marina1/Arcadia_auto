@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import pages.ParentDashboard;
 import pages.StatisticsPage;
 
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
@@ -128,7 +127,7 @@ public class TestStatisticsPage extends LogInOutBase{
         assertEquals(classDropDownTextV, "Klasse 1");
     }
 
-    @Test // TODO: 20.04.22
+   // @Test // TODO: 20.04.22
     public void checkColorsOfProgressBars() throws InterruptedException {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(), ParentDashboard.class);
         StatisticsPage statisticsPage = PageFactory.initElements(WebDriverContainer.getDriver(),StatisticsPage.class);

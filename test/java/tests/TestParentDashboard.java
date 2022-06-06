@@ -3,16 +3,12 @@ package tests;
 import helpers.WebDriverContainer;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Configuration.pageLoadTimeout;
 import static org.testng.Assert.assertEquals;
 
 public class TestParentDashboard extends LogInOutBase{
@@ -72,13 +68,6 @@ public class TestParentDashboard extends LogInOutBase{
         CartPage cartPage = PageFactory.initElements(WebDriverContainer.getDriver(), CartPage.class);
         String title = cartPage.getCartTitle().getText();
         assertEquals(title,"Warenkorb");
-    }
-    //@Test
-    public void checkAvatarsWhenDropDown(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
-        parentDashboard.getParentNameContainingKids().click();
-        parentDashboard.getParentNameContainingKids().click();
-        Assert.assertTrue(parentDashboard.getSvgKristinaAvatar().isDisplayed()); //svg of children is not yet displayed
     }
     @Test
     public void translateMainPageToEN(){

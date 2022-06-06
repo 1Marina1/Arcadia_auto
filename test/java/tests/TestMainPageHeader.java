@@ -23,6 +23,18 @@ public class TestMainPageHeader extends TestBase {
         assertEquals(title, "Hol dir das Beste" + "\naus digitalem Lernen");
     }
     @Test
+    public void pressLearnMoreButton() throws InterruptedException {
+        MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
+        mainPage.getHeaderLogo().click();
+        mainPage.getLearnMoreButton().click();
+        String currentUrl = WebDriverContainer.getDriver().getCurrentUrl();
+        String newUrl;
+        do {
+            newUrl = WebDriverContainer.getDriver().getCurrentUrl();
+            Thread.sleep(5);
+        }while(newUrl.contentEquals(currentUrl + "#learn-more"));
+    }
+    @Test
     public void goToAboutUsBlockViaHeader() throws InterruptedException {
         MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
         mainPage.getAboutUsHeaderLink().click();
@@ -49,16 +61,6 @@ public class TestMainPageHeader extends TestBase {
         String registrationCardTitle = mainPage.getRegistrationCardTitle().getText();
         assertEquals(registrationCardTitle, "Schritt 1:");
     }
-    @Test
-    public void pressLearnMoreButton() throws InterruptedException {
-        MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
-        mainPage.getLearnMoreButton().click();
-        String currentUrl = WebDriverContainer.getDriver().getCurrentUrl();
-        String newUrl;
-        do {
-            newUrl = WebDriverContainer.getDriver().getCurrentUrl();
-            Thread.sleep(5);
-        }while(newUrl.contentEquals(currentUrl + "#learn-more"));
-    }
+
 
 }

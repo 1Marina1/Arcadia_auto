@@ -9,7 +9,7 @@ import pages.ParentDashboard;
 import static org.testng.Assert.assertEquals;
 
 public class TestChildDashboard extends LogInOutBaseChild{
-    @Test
+    @Test(groups = {"ChildTest"})
     public void goToParentsAccount(){
         ChildDashboard childDashboard = PageFactory.initElements(WebDriverContainer.getDriver(), ChildDashboard.class);
         childDashboard.getGoToParentDashboardButton().click();

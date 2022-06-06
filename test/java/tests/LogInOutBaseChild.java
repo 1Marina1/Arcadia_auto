@@ -5,10 +5,8 @@ import helpers.WebDriverContainer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
-import org.testng.annotations.Listeners;
 import pages.ChildDashboard;
 import pages.MainPage;
 import pages.ParentDashboard;
@@ -22,10 +20,12 @@ public class LogInOutBaseChild {
     protected String baseUrl = "https://arcadia.study/de/";
 
     @BeforeTest
+    @BeforeGroups("ChildTest")
     public void logIn(){
         WebDriverContainer.getDriver().get(baseUrl);
-        System.out.println(WebDriverContainer.getDriver().getCurrentUrl());
+
         MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
+        mainPage.getHeaderLogo().click();
         mainPage.getMyAccountHeaderLink().click();
         WebDriverContainer.getDriver().manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         TestLogInOutToParent logInToParent = PageFactory.initElements(WebDriverContainer.getDriver(),
@@ -38,7 +38,7 @@ public class LogInOutBaseChild {
         parentDashboard.getLinkToKristinaKidsAccount().click();
     }
 
-    @AfterTest
+    @AfterGroups("ChildTest")
     public void logOutAndTearDown(){
         ChildDashboard childDashboard = PageFactory.initElements(WebDriverContainer.getDriver(), ChildDashboard.class);
         childDashboard.getLogOutButtonChildDashboard().click();
