@@ -54,7 +54,7 @@ public class TestLogInOutToParent extends TestBase{
         logInToParent.getLogInButton().click();
 
     }
-   // @Test
+    @Test
     public void invalidLogIn(){
         MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
         mainPage.getMyAccountHeaderLink().click();
