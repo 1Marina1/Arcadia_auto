@@ -104,7 +104,7 @@ public class SettingsPage {
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div/mat-radio-group/mat-radio-button[1]/label/span[1]")
     private WebElement oneMonthRadioButton;
 
-    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div[2]/a")
+    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div[2]/a/p")
     private WebElement addToCartButtonOnPopUp;
 
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/div/div/div[2]/a")

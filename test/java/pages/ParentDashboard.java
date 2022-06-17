@@ -7,7 +7,7 @@ public class ParentDashboard {
     @FindBy(css = "a.logout")
     private WebElement logoutButton;
 
-    @FindBy(css = "div > h1")
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-dashboard/div[1]/h1")
     private WebElement dashboardTitle;
 
     @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/app-parent-menu/nav/ul/li[1]/a")

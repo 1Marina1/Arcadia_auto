@@ -13,7 +13,7 @@ public class CartPage {
     @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-cart/div[2]/div/mat-card/a")
     private WebElement deleteSubscriptionButton;
 
-    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-cart/div[2]/button")
+    @FindBy(css = "div > button")
     private WebElement goToPaymentButton;
 
     @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-cart/div[2]/div/h1")

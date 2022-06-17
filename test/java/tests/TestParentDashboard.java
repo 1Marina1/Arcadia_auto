@@ -1,10 +1,9 @@
 package tests;
 
-import helpers.WebDriverContainer;
+import helpers.WebDriverContainer1;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 
-import org.testng.annotations.Test;
 import pages.*;
 
 import java.util.concurrent.TimeUnit;
@@ -12,82 +11,82 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
 public class TestParentDashboard extends LogInOutBase{
-    @Test
+  //  @Test
     public void goToDashboardViaLeftMenu(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getDashboardLeftMenu().click();
         String dashboardTitle = parentDashboard.getDashboardTitle().getText();
         assertEquals(dashboardTitle, "Dashboard");
     }
-    @Test
+  //  @Test
     public void goToStatisticsViaLeftMenu(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getStatistikLeftMenu().click();
 
-        WebDriverContainer.getDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        StatisticsPage statisticsPage = PageFactory.initElements(WebDriverContainer.getDriver(), StatisticsPage.class);
+        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        StatisticsPage statisticsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), StatisticsPage.class);
         String statisticsTitle = statisticsPage.getStatisticsTitle().getText();
         assertEquals(statisticsTitle, "Statistik");
     }
 
     //@Test
     public void checkProgressBarColors() throws InterruptedException {
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getStatistikLeftMenu().click();
         parentDashboard.getDashboardLeftMenu().click();
         parentDashboard.getStatistikLeftMenu().click();
         parentDashboard.getDashboardLeftMenu().click();
-        WebDriverContainer.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         String script = "return window.getComputedStyle(document.querySelector('body > app-root > app-layout-parent > div > div:nth-child(2) > main > app-parent-dashboard > div.pr-3.pl-3.pl-md-0.pr-md-0.ng-star-inserted > div:nth-child(1) > div > div.col-md-6.col-7.p-0 > div:nth-child(2) > div > div:nth-child(2) > mat-progress-bar > div > div.mat-progress-bar-primary.mat-progress-bar-fill.mat-progress-bar-element'),':after').getPropertyValue('background-color')";
         Thread.sleep(3000);
-        JavascriptExecutor js = (JavascriptExecutor) WebDriverContainer.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) WebDriverContainer1.getDriver();
         String barColor = (String) js.executeScript(script);
             assertEquals(barColor, "rgb(63, 81, 181)");// change color here
 
     }
-    @Test
+   // @Test
     public void goToDashboardViaLogo(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getDashboardLogo().click();
         String title = parentDashboard.getDashboardTitle().getText();
         assertEquals(title, "Dashboard");
     }
-    @Test
+  //  @Test
     public void goToSettingsRightMenu(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getSettingRightMenu().click();
-        SettingsPage settingsPage = PageFactory.initElements(WebDriverContainer.getDriver(), SettingsPage.class);
+        SettingsPage settingsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), SettingsPage.class);
         String title = settingsPage.getSettingsTitle().getText();
         assertEquals(title, "Einstellungen");
     }
-    @Test
+   // @Test
     public void goToCartRightMenu(){
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
         parentDashboard.getCartRightMenu().click();
-        CartPage cartPage = PageFactory.initElements(WebDriverContainer.getDriver(), CartPage.class);
+        CartPage cartPage = PageFactory.initElements(WebDriverContainer1.getDriver(), CartPage.class);
         String title = cartPage.getCartTitle().getText();
         assertEquals(title,"Warenkorb");
     }
-    @Test
+  //  @Test
     public void translateMainPageToEN(){
-        MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
+        MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(),MainPage.class);
         mainPage.getLanguageSwitcher().click();
         mainPage.getLanguageSwitcherToEN().click();
 
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
 
         String title = parentDashboard.getLogoutButton().getText();
         assertEquals(title, "Logout");
         String switcherText = mainPage.getLanguageSwitcher().getText();
         assertEquals(switcherText,"EN");
     }
-    @Test
+   // @Test
     public void translateMainPageToDE(){
-        MainPage mainPage = PageFactory.initElements(WebDriverContainer.getDriver(),MainPage.class);
+        MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(),MainPage.class);
         mainPage.getLanguageSwitcher().click();
         mainPage.getLanguageSwitcherToDE().click();
-        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer.getDriver(),ParentDashboard.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(),ParentDashboard.class);
 
         String title = parentDashboard.getLogoutButton().getText();
         assertEquals(title, "Abmelden");

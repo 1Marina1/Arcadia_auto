@@ -4,7 +4,7 @@ package helpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverContainer {
+public class WebDriverContainer1 {
 
     private static WebDriver driver;
 

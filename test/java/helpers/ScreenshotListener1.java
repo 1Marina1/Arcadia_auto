@@ -9,11 +9,11 @@ import org.testng.ITestResult;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenshotListener implements ITestListener {
+public class ScreenshotListener1 implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result){
-        File screenshot = ((TakesScreenshot) WebDriverContainer.getDriver()).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) WebDriverContainer1.getDriver()).getScreenshotAs(OutputType.FILE);
         String fileName = result.getName() + "screenshot.png";
         File destFile = new File("/Users/HP/Desktop/Screenshots/" + fileName);
 
